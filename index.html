@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL 2026 Ticket Booking</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #222;
+        }
+
+        header {
+            background: #123c8c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #09265c;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 12px;
+            font-weight: bold;
+        }
+
+        .hero {
+            background: linear-gradient(120deg, #123c8c, #2878d0);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffb300;
+            color: #111;
+            padding: 12px 22px;
+            margin: 20px 8px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: #123c8c;
+        }
+
+        .match {
+            background: white;
+            max-width: 600px;
+            margin: 15px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #ccc;
+        }
+
+        form {
+            background: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #ccc;
+            text-align: left;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0 18px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        form button {
+            width: 100%;
+        }
+
+        footer {
+            background: #09265c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>IPL 2026</h1>
+        <p>Indian Premier League - Ticket Booking</p>
+    </header>
+
+    <nav>
+        <a href="#matches">Matches</a>
+        <a href="#booking">Book Ticket</a>
+        <a href="#mybookings">My Bookings</a>
+        <a href="#guidelines">Guidelines</a>
+    </nav>
+
+    <div class="hero">
+        <h2>Experience The Stadium Energy Live!</h2>
+        <p>Watch your favourite IPL teams live in action.</p>
+
+        <a href="#matches" class="btn">View Schedule</a>
+        <a href="#booking" class="btn book-btn">Book Ticket</a>
+    </div>
+
+    <section id="matches">
+        <h2>Upcoming Matches</h2>
+
+        <div class="match">
+            <h3>Royal Challengers Bengaluru vs Chennai Super Kings</h3>
+            <p>Date: 25 April 2026</p>
+            <p>Venue: Bengaluru</p>
+            <a href="#booking" class="btn book-btn">Book Ticket</a>
+        </div>
+
+        <div class="match">
+            <h3>Mumbai Indians vs Kolkata Knight Riders</h3>
+            <p>Date: 28 April 2026</p>
+            <p>Venue: Mumbai</p>
+            <a href="#booking" class="btn book-btn">Book Ticket</a>
+        </div>
+    </section>
+
+    <section id="booking">
+        <h2>IPL Ticket Booking Form</h2>
+
+        <form id="booking-form">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter phone number"
+                   pattern="[0-9]{10}" required>
+
+            <label for="match">Select Match</label>
+            <select id="match" required>
+                <option value="">Choose a match</option>
+                <option>RCB vs CSK</option>
+                <option>MI vs KKR</option>
+            </select>
+
+            <label for="stand">Select Stand</label>
+            <select id="stand" required>
+                <option value="">Choose a stand</option>
+                <option>General Stand</option>
+                <option>Premium Stand</option>
+                <option>VIP Stand</option>
+            </select>
+
+            <label for="tickets">Number of Tickets</label>
+            <input type="number" id="tickets" min="1" max="10" required>
+
+            <button type="submit" class="btn">Submit Booking</button>
+        </form>
+    </section>
+
+    <section id="mybookings">
+        <h2>My Bookings</h2>
+        <p>Your booking details will be displayed here.</p>
+    </section>
+
+    <section id="guidelines">
+        <h2>Stadium Guidelines</h2>
+        <p>Please carry your ticket and valid ID proof.</p>
+        <p>Follow stadium rules and enjoy the match.</p>
+    </section>
+
+    <footer>
+        <p>© 2026 IPL Ticket Booking. All Rights Reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
