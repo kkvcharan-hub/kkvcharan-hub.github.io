@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Ticket Booking</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eaf0ff;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #aaa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #123c8c;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            background: #123c8c;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button[type="reset"] {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>IPL Ticket Booking</h1>
+
+    <form action="#" method="get">
+
+        <label>Full Name:</label>
+        <input type="text" name="name"
+        placeholder="Enter your name"
+        required minlength="3" maxlength="30">
+
+        <label>Email:</label>
+        <input type="email" name="email"
+        placeholder="Enter your email"
+        required>
+
+        <label>Phone Number:</label>
+        <input type="tel" name="phone"
+        placeholder="10 digit mobile number"
+        pattern="[0-9]{10}"
+        title="Enter exactly 10 digits"
+        required>
+
+        <label>Select Match:</label>
+        <select name="match" required>
+            <option value="">Choose a match</option>
+            <option>RCB vs CSK</option>
+            <option>MI vs RCB</option>
+            <option>CSK vs MI</option>
+            <option>KKR vs SRH</option>
+        </select>
+
+        <label>Stand Category:</label>
+        <select name="stand" required>
+            <option value="">Choose a stand</option>
+            <option>General Stand</option>
+            <option>Premium Stand</option>
+            <option>VIP Stand</option>
+        </select>
+
+        <label>Number of Tickets:</label>
+        <input type="number" name="tickets"
+        min="1" max="10" required>
+
+        <label>Additional Preference:</label>
+        <input type="checkbox" name="preference"
+        value="Food"> Food Preference
+
+        <br>
+
+        <button type="submit">Book Tickets</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
