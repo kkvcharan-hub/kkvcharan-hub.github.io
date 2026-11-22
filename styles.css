@@ -1,0 +1,85 @@
+/* Activity 8 Responsive Design */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Flexbox */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+/* Match Cards Grid */
+#matches {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+#matches h2 {
+    grid-column: 1 / -1;
+}
+
+.match {
+    background: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Guidelines Grid */
+#guidelines {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    #matches,
+    #guidelines {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+}
+/* Hamburger Menu */
+
+#menu-toggle {
+    display: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        align-items: flex-start;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    nav a {
+        display: none;
+        width: 100%;
+        padding: 10px;
+    }
+
+    nav.menu-open a {
+        display: block;
+    }
+}

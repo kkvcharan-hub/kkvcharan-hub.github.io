@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPL 2026 Ticket Booking</title>
@@ -126,6 +127,7 @@
     </header>
 
     <nav>
+        <button id="menu-toggle">☰ Menu</button>
         <a href="#matches">Matches</a>
         <a href="#booking">Book Ticket</a>
         <a href="#mybookings">My Bookings</a>
@@ -142,6 +144,18 @@
 
     <section id="matches">
         <h2>Upcoming Matches</h2>
+        <div class="match-controls">
+    <select id="team-filter">
+        <option value="all">All Teams</option>
+        <option value="RCB">RCB</option>
+        <option value="CSK">CSK</option>
+        <option value="MI">MI</option>
+        <option value="KKR">KKR</option>
+    </select>
+
+    <button id="grid-view">Grid View</button>
+    <button id="list-view">List View</button>
+</div>
 
         <div class="match">
             <h3>Royal Challengers Bengaluru vs Chennai Super Kings</h3>

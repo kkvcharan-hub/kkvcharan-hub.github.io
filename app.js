@@ -92,3 +92,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateSummary(false);
 });
+// Activity 8: Team Filter and Grid/List View
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const filter = document.getElementById("team-filter");
+    const matches = document.querySelectorAll("#matches .match");
+    const matchSection = document.getElementById("matches");
+
+    // Filter matches by team
+    filter.addEventListener("change", function () {
+        const selectedTeam = filter.value;
+
+        matches.forEach(function (match) {
+            if (
+                selectedTeam === "all" ||
+                match.textContent.toUpperCase().includes(selectedTeam)
+            ) {
+                match.style.display = "block";
+            } else {
+                match.style.display = "none";
+            }
+        });
+    });
+
+    // Grid View
+    document.getElementById("grid-view").addEventListener("click", function () {
+        matchSection.style.gridTemplateColumns = "repeat(2, 1fr)";
+    });
+
+    // List View
+    document.getElementById("list-view").addEventListener("click", function () {
+        matchSection.style.gridTemplateColumns = "1fr";
+    });
+
+});
+// Activity 8: Mobile Hamburger Menu
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton = document.getElementById("menu-toggle");
+    const navigation = document.querySelector("nav");
+
+    menuButton.addEventListener("click", function () {
+        navigation.classList.toggle("menu-open");
+    });
+
+});
