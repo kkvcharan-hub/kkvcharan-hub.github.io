@@ -1,5 +1,5 @@
 
-// Reusable Toast Notification Function
+// Toast Notification Function
 function showToast(message) {
     let toast = document.getElementById("toast");
 
@@ -24,20 +24,19 @@ function showToast(message) {
     toast.textContent = message;
     toast.style.display = "block";
 
-    setTimeout(function () {
+    setTimeout(() => {
         toast.style.display = "none";
     }, 3000);
 }
 
-// Smooth Scrolling and Toast Notification
+// Smooth Scrolling
 document.addEventListener("DOMContentLoaded", function () {
 
     const bookButtons = document.querySelectorAll(".book-btn");
     const bookingForm = document.getElementById("booking-form");
 
-    bookButtons.forEach(function (button) {
+    bookButtons.forEach(button => {
         button.addEventListener("click", function (event) {
-
             if (bookingForm) {
                 event.preventDefault();
 
@@ -50,5 +49,46 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-});
+    // Activity 7: Booking Summary Live Update
+    const matchSelect = document.getElementById("match");
+    const standSelect = document.getElementById("stand");
+    const quantityInput = document.getElementById("tickets");
 
+    const summaryMatch = document.getElementById("summary-match");
+    const summaryStand = document.getElementById("summary-stand");
+    const ticketPrice = document.getElementById("ticket-price");
+    const summaryQuantity = document.getElementById("summary-quantity");
+    const totalAmount = document.getElementById("total-amount");
+
+    const prices = {
+        "General Stand": 800,
+        "Premium Stand": 1500,
+        "VIP Stand": 2500
+    };
+
+    function updateSummary(showMessage = true) {
+
+        const match = matchSelect.value || "Not selected";
+        const stand = standSelect.value || "Not selected";
+        const quantity = Math.max(1, Number(quantityInput.value) || 1);
+
+        const price = prices[stand] || 0;
+        const total = price * quantity;
+
+        summaryMatch.textContent = match;
+        summaryStand.textContent = stand;
+        ticketPrice.textContent = price;
+        summaryQuantity.textContent = quantity;
+        totalAmount.textContent = total;
+
+        if (showMessage) {
+            showToast("Booking Summary Updated!");
+        }
+    }
+
+    matchSelect.addEventListener("change", () => updateSummary());
+    standSelect.addEventListener("change", () => updateSummary());
+    quantityInput.addEventListener("change", () => updateSummary());
+
+    updateSummary(false);
+});
